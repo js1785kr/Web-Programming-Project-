@@ -1,275 +1,227 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Season Guide | GreenThumb</title> 
-     
-    <link rel="stylesheet" href="styles.css"> 
-</head> 
-<body> 
-k 
-<header> 
-    <div class="container"> 
-        <a href="index.html" style="display:flex;align-items:center;gap:0.5rem;color:#059669;text-decoration:none;"> 
-            <span style="font-size:1.5rem;">  </span> 
-            <span style="font-size:1.25rem;font-weight:bold;color:#065f46;">GreenThumb</span> 
-        </a> 
-        <nav class="desktop-nav"> 
-            <a href="index.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Home</a> 
-            <a href="crops.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Crop Guide</a> 
-            <a href="planner.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Garden Planner</a> 
-            <a href="pests.html" style="padding:0.5rem 1rem;border-radius:0.5rem;background:#d1fae5;color:#065f46;font-weight:600;text-decoration:none;">Pest Control</a> 
-            <a href="seasons.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Season Guide</a> 
-            <a href="resources.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Resources</a> 
-            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a> 
-            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a> 
-        </nav> 
-    </div> 
-</header> 
- 
-<main> 
-    <section style="background: #0d9488; color: white; padding: 3rem 1.5rem;"> 
-        <div style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;"> 
-            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 
-1rem;">Seasonal Planting Guide</h2> 
-            <p style="font-size: 1.25rem;">Know what to plant and when</p> 
-        </div> 
-    </section> 
-     
-    <!-- Content Section --> 
-    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;"> 
-        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Monthly 
-Planting Calendar</h3> 
-<style> 
-    .calendar-table { 
-        width: 100%; 
-        border-collapse: collapse; 
-        margin-top: 1.5rem; /* Space between filter and table */ 
-    } 
-    .calendar-table th, .calendar-table td { 
-        border: 1px solid #d1d5db; 
-        padding: 0.75rem; 
-    } 
-    .calendar-table th { 
-        background: #059669;  /* Green header */ 
-        color: white; 
-        font-weight: bold; 
-    } 
-    .calendar-table td:first-child { 
-        font-weight: bold; 
-    } 
-    .calendar-table tr.highlight { 
-        background: #d1fae5 !important; 
-    } 
-    .filter-section { 
-        display: flex; 
-        gap: 1rem; 
-        margin-bottom: 1rem;  /* Space below filters */ 
-        flex-wrap: wrap; 
-        padding: 0.5rem 0;     /* Extra padding around filters */ 
-    } 
-    .filter-btn { 
-        padding: 0.5rem 1.25rem; 
-        border: none; 
-        border-radius: 2rem; 
-        cursor: pointer; 
-        background: #e5e7eb; 
-        color: #374151; 
-    } 
-    .filter-btn.active { 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Guide | GreenThumb</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+k
+<header>
+    <div class="container">
+        <a href="index.html" style="display:flex;align-items:center;gap:0.5rem;color:#059669;text-decoration:none;">
+            <span style="font-size:1.5rem;">🌱</span>
+            <span style="font-size:1.25rem;font-weight:bold;color:#065f46;">GreenThumb</span>
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Home</a>
+            <a href="crops.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Crop Guide</a>
+            <a href="planner.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Garden Planner</a>
+            <a href="pests.html" style="padding:0.5rem 1rem;border-radius:0.5rem;background:#d1fae5;color:#065f46;font-weight:600;text-decoration:none;">Pest Control</a>
+            <a href="seasons.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Season Guide</a>
+            <a href="resources.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Resources</a>
+            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a>
+            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section style="background: #0d9488; color: white; padding: 3rem 1.5rem;">
+        <div style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem;">Seasonal Planting Guide</h2>
+            <p style="font-size: 1.25rem;">Know what to plant and when</p>
+        </div>
+    </section>
+    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">
+        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Monthly Planting Calendar</h3>
+<style>
+    .calendar-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem; 
+    }
+    .calendar-table th, .calendar-table td {
+        border: 1px solid #d1d5db;
+        padding: 0.75rem;
+    }
+    .calendar-table th {
         background: #059669; 
-        color: white; 
-    } 
-</style> 
- 
-<div class="filter-section"> 
-    <button class="filter-btn active" data-season="all" onclick="filterSeason('all')">             
-All</button> 
-    <button class="filter-btn" data-season="spring" onclick="filterSeason('spring')">   
-Spring</button> 
-    <button class="filter-btn" data-season="summer" 
-onclick="filterSeason('summer')">   Summer</button> 
-    <button class="filter-btn" data-season="fall" onclick="filterSeason('fall')">       
-Fall</button> 
-    <button class="filter-btn" data-season="winter" onclick="filterSeason('winter')">  
-Winter</button> 
-</div> 
- 
-<table class="calendar-table"> 
-    <thead> 
-        <tr><th>Month</th><th>Plant Outdoors</th><th>Start Indoors</th></tr> 
-    </thead> 
-    <tbody> 
-        <tr data-season="winter"><td>January</td><td>Onion sets, 
-garlic</td><td>Tomatoes, peppers</td></tr> 
-        <tr data-season="winter"><td>February</td><td>Peas, onions, 
-potatoes</td><td>Tomatoes, peppers, eggplant</td></tr> 
-        <tr data-season="spring"><td>March</td><td>Lettuce, spinach, 
-radishes</td><td>Herbs, flowers, warm-season crops</td></tr> 
-        <tr data-season="spring"><td>April</td><td>Broccoli, cabbage, 
-kale</td><td>Cucumbers, squash, melons</td></tr> 
-        <tr data-season="spring"><td>May</td><td>Tomatoes, peppers, 
-beans</td><td>Fall crops</td></tr> 
-        <tr data-season="summer"><td>June</td><td>Cucumbers, melons</td><td>Fall 
-broccoli, cabbage</td></tr> 
-        <tr data-season="summer"><td>July</td><td>Beans, summer squash</td><td>Fall 
-lettuce, spinach</td></tr> 
-        <tr data-season="summer"><td>August</td><td>Fall greens, 
-radishes</td><td>Winter crops</td></tr> 
-        <tr data-season="fall"><td>September</td><td>Garlic, onions, cover 
-crops</td><td>Spring flowers</td></tr> 
-        <tr data-season="fall"><td>October</td><td>Garlic, bulbs</td><td>Early spring 
-crops</td></tr> 
-        <tr data-season="fall"><td>November</td><td>Overwintering 
-crops</td><td>Planning for next year</td></tr> 
-        <tr data-season="winter"><td>December</td><td>Planning and 
-preparation</td><td>Early season crops</td></tr> 
-    </tbody> 
-</table> 
- 
-<!-- JavaScript --> 
-<script> 
-    function highlightCurrentMonth() { 
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 
-'September', 'October', 'November', 'December']; 
-        const currentMonth = months[new Date().getMonth()]; 
-        document.querySelectorAll('.calendar-table tbody tr').forEach(row => { 
-            if(row.cells[0].innerText === currentMonth) row.classList.add('highlight'); 
-        }); 
-    } 
- 
-    function filterSeason(season) { 
-        document.querySelectorAll('.filter-btn').forEach(btn => { 
-            btn.classList.toggle('active', btn.getAttribute('data-season') === season); 
-        }); 
-        document.querySelectorAll('.calendar-table tbody tr').forEach(row => { 
-            row.style.display = (season === 'all' || row.getAttribute('data-season') === season) 
-? '' : 'none'; 
-        }); 
-    } 
- 
-    highlightCurrentMonth(); 
-</script> 
-        <div class="cards-grid" style="margin-top: 3rem;"> 
-            <!-- Spring Card --> 
-            <div class="card"> 
-                <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #047857;">Spring 
-Planting</h3> 
-                    <ul> 
-                        <li>Start seeds indoors 6-8 weeks before last frost</li> 
-                        <li>Prepare garden beds when soil is workable</li> 
-                        <li>Plant cool-season crops like lettuce and peas</li> 
-                        <li>Transplant seedlings after last frost date</li> 
-                        <li>Apply compost and organic fertilizer</li> 
-                    </ul> 
-                </div> 
-            </div> 
-             
-            <!-- Summer Card --> 
-            <div class="card"> 
-                <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #ea580c;">Summer 
-Care</h3> 
-                    <ul> 
-                        <li>Water deeply in early morning</li> 
-                        <li>Harvest frequently to encourage production</li> 
-                        <li>Watch for pests and diseases</li> 
-                        <li>Provide shade for heat-sensitive plants</li> 
-                        <li>Start fall crops indoors</li> 
-                    </ul> 
-                </div> 
-            </div> 
-             
-            <!-- Fall Card --> 
-            <div class="card"> 
-                <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #7c3aed;">Fall 
-Gardening</h3> 
-                    <ul> 
-                        <li>Plant garlic and overwintering crops</li> 
-                        <li>Harvest remaining summer crops</li> 
-                        <li>Plant cover crops to protect soil</li> 
-                        <li>Clean up garden debris</li> 
-                        <li>Prepare beds for next spring</li> 
-                    </ul> 
-                </div> 
-            </div> 
-        </div> 
-         
-        <div style="background: #f0fdf4; padding: 2rem; border: 1px solid #bbf7d0; border-radius: 1rem; margin-top: 3rem;"> 
-            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
-#065f46;">Seasonal Gardening Tips</h3> 
-            <ul> 
-                <li><strong>Spring:</strong> Focus on soil preparation and early planting</li> 
-                <li><strong>Summer:</strong> Maintain consistent watering and pest 
-control</li> 
-                <li><strong>Fall:</strong> Plant garlic and prepare for winter</li> 
-                <li><strong>Winter:</strong> Plan next year's garden and order seeds</li> 
-                <li><strong>Year-Round:</strong> Keep a garden journal for reference</li> 
-            </ul> 
-        </div> 
-         
-        <div style="text-align: center; margin-top: 3rem;"> 
-            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: 
-none;">← Back to Home</a> 
-        </div> 
-    </section> 
-</main> 
- 
-<footer> 
-    <div style="max-width: 80rem; margin: 0 auto;"> 
-        <div class="footer-grid"> 
-            <div> 
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 
-1rem;"> 
-                    <span style="font-size: 1.5rem;">  </span> 
-                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span> 
-                </div> 
-                <p style="color: #a7f3d0;">Your farming and gardening companion.</p> 
-            </div> 
-             
-            <div> 
-                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
-letter-spacing: 0.05em;">Quick Links</h4> 
-                <ul style="list-style: none;"> 
-                    <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: 
-#a7f3d0; text-decoration: none;">Home</a></li> 
-                    <li style="margin-bottom: 0.5rem;"><a href="crops.html" style="color: 
-#a7f3d0; text-decoration: none;">Crop Guide</a></li> 
-                    <li style="margin-bottom: 0.5rem;"><a href="planner.html" style="color: 
-#a7f3d0; text-decoration: none;">Garden Planner</a></li> 
-                    <li style="margin-bottom: 0.5rem;"><a href="seasons.html" style="color: 
-#a7f3d0; text-decoration: none;">Season Guide</a></li> 
-                </ul> 
-            </div> 
-             
-            <div> 
-                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
-letter-spacing: 0.05em;">Contact Us</h4> 
-                <ul style="list-style: none;"> 
-                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
-0.5rem;"> 
-                        <span>       </span> 
-                        <span>support@greenthumb.com</span> 
-                    </li> 
-                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
-0.5rem;"> 
-                        <span>   </span> 
-                        <span>Farm Country, USA</span> 
-                    </li> 
-                </ul> 
-            </div> 
-        </div> 
-         
-        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; 
-color: #6ee7b7;"> 
-            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p> 
-            <p style="margin-top: 2rem;">Grow naturally, grow sustainably.</p> 
-        </div> 
-    </div> 
-</footer> 
-<script src="script.js"></script> 
-</body> 
+        color: white;
+        font-weight: bold;
+    }
+    .calendar-table td:first-child {
+        font-weight: bold;
+    }
+    .calendar-table tr.highlight {
+        background: #d1fae5 !important;
+    }
+    .filter-section {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;  
+        flex-wrap: wrap;
+        padding: 0.5rem 0;     
+    }
+    .filter-btn {
+        padding: 0.5rem 1.25rem;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        background: #e5e7eb;
+        color: #374151;
+    }
+    .filter-btn.active {
+        background: #059669;
+        color: white;
+    }
+</style>
+
+<div class="filter-section">
+    <button class="filter-btn active" data-season="all" onclick="filterSeason('all')"> All</button>
+    <button class="filter-btn" data-season="spring" onclick="filterSeason('spring')"> Spring</button>
+    <button class="filter-btn" data-season="summer" onclick="filterSeason('summer')"> Summer</button>
+    <button class="filter-btn" data-season="fall" onclick="filterSeason('fall')"> Fall</button>
+    <button class="filter-btn" data-season="winter" onclick="filterSeason('winter')"> Winter</button>
+</div>
+
+<table class="calendar-table">
+    <thead>
+        <tr><th>Month</th><th>Plant Outdoors</th><th>Start Indoors</th></tr>
+    </thead>
+    <tbody>
+        <tr data-season="winter"><td>January</td><td>Onion sets, garlic</td><td>Tomatoes, peppers</td></tr>
+        <tr data-season="winter"><td>February</td><td>Peas, onions, potatoes</td><td>Tomatoes, peppers, eggplant</td></tr>
+        <tr data-season="spring"><td>March</td><td>Lettuce, spinach, radishes</td><td>Herbs, flowers, warm-season crops</td></tr>
+        <tr data-season="spring"><td>April</td><td>Broccoli, cabbage, kale</td><td>Cucumbers, squash, melons</td></tr>
+        <tr data-season="spring"><td>May</td><td>Tomatoes, peppers, beans</td><td>Fall crops</td></tr>
+        <tr data-season="summer"><td>June</td><td>Cucumbers, melons</td><td>Fall broccoli, cabbage</td></tr>
+        <tr data-season="summer"><td>July</td><td>Beans, summer squash</td><td>Fall lettuce, spinach</td></tr>
+        <tr data-season="summer"><td>August</td><td>Fall greens, radishes</td><td>Winter crops</td></tr>
+        <tr data-season="fall"><td>September</td><td>Garlic, onions, cover crops</td><td>Spring flowers</td></tr>
+        <tr data-season="fall"><td>October</td><td>Garlic, bulbs</td><td>Early spring crops</td></tr>
+        <tr data-season="fall"><td>November</td><td>Overwintering crops</td><td>Planning for next year</td></tr>
+        <tr data-season="winter"><td>December</td><td>Planning and preparation</td><td>Early season crops</td></tr>
+    </tbody>
+</table>
+<script>
+    function highlightCurrentMonth() {
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const currentMonth = months[new Date().getMonth()];
+        document.querySelectorAll('.calendar-table tbody tr').forEach(row => {
+            if(row.cells[0].innerText === currentMonth) row.classList.add('highlight');
+        });
+    }
+
+    function filterSeason(season) {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-season') === season);
+        });
+        document.querySelectorAll('.calendar-table tbody tr').forEach(row => {
+            row.style.display = (season === 'all' || row.getAttribute('data-season') === season) ? '' : 'none';
+        });
+    }
+
+    highlightCurrentMonth();
+</script>
+        <div class="cards-grid" style="margin-top: 3rem;">
+            <div class="card">
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #047857;">Spring Planting</h3>
+                    <ul>
+                        <li>Start seeds indoors 6-8 weeks before last frost</li>
+                        <li>Prepare garden beds when soil is workable</li>
+                        <li>Plant cool-season crops like lettuce and peas</li>
+                        <li>Transplant seedlings after last frost date</li>
+                        <li>Apply compost and organic fertilizer</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #ea580c;">Summer Care</h3>
+                    <ul>
+                        <li>Water deeply in early morning</li>
+                        <li>Harvest frequently to encourage production</li>
+                        <li>Watch for pests and diseases</li>
+                        <li>Provide shade for heat-sensitive plants</li>
+                        <li>Start fall crops indoors</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: bold; color: #7c3aed;">Fall Gardening</h3>
+                    <ul>
+                        <li>Plant garlic and overwintering crops</li>
+                        <li>Harvest remaining summer crops</li>
+                        <li>Plant cover crops to protect soil</li>
+                        <li>Clean up garden debris</li>
+                        <li>Prepare beds for next spring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="background: #f0fdf4; padding: 2rem; border: 1px solid #bbf7d0; border-radius: 1rem; margin-top: 3rem;">
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #065f46;">Seasonal Gardening Tips</h3>
+            <ul>
+                <li><strong>Spring:</strong> Focus on soil preparation and early planting</li>
+                <li><strong>Summer:</strong> Maintain consistent watering and pest control</li>
+                <li><strong>Fall:</strong> Plant garlic and prepare for winter</li>
+                <li><strong>Winter:</strong> Plan next year's garden and order seeds</li>
+                <li><strong>Year-Round:</strong> Keep a garden journal for reference</li>
+            </ul>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: none;">← Back to Home</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div style="max-width: 80rem; margin: 0 auto;">
+        <div class="footer-grid">
+            <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="font-size: 1.5rem;">🌱</span>
+                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span>
+                </div>
+                <p style="color: #a7f3d0;">Your farming and gardening companion.</p>
+            </div>
+            
+            <div>
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: #a7f3d0; text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="crops.html" style="color: #a7f3d0; text-decoration: none;">Crop Guide</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="planner.html" style="color: #a7f3d0; text-decoration: none;">Garden Planner</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="seasons.html" style="color: #a7f3d0; text-decoration: none;">Season Guide</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact Us</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📧</span>
+                        <span>support@greenthumb.com</span>
+                    </li>
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📍</span>
+                        <span>Farm Country, USA</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; color: #6ee7b7;">
+            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p>
+            <p style="margin-top: 2rem;">Grow naturally, grow sustainably.</p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
 </html>
