@@ -1,49 +1,47 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Crop Guide | GreenThumb</title> 
-     
-    <!-- EXTERNAL CSS --> 
-    <link rel="stylesheet" href="styles.css"> 
-     
-    <style> 
-        .crop-image { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            display: block; 
-        } 
-        .cards-grid { 
-            display: grid; 
-            gap: 1.5rem; 
-            margin-bottom: 3rem; 
-        } 
-        .card { 
-            background: white; 
-            border: 1px solid #e5e7eb; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            transition: transform 0.3s, box-shadow 0.3s; 
-        } 
-        .card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-        } 
-        .season-badge { 
-            display: inline-block; 
-            margin-top: 1rem; 
-            background: #d1fae5; 
-            color: #065f46; 
-            padding: 0.25rem 0.75rem; 
-            border-radius: 9999px; 
-            font-size: 0.75rem; 
-            font-weight: bold; 
-        } 
-        @media (min-width: 768px) { 
-            .cards-grid { grid-template-columns: repeat(3, 1fr); } 
-        } 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Guide | GreenThumb</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .crop-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .cards-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .season-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        @media (min-width: 768px) {
+            .cards-grid { grid-template-columns: repeat(3, 1fr); }
+        }
     </style> 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -51,190 +49,143 @@
 </head> 
 <body> 
  
-<header> 
-    <div class="container"> 
-        <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; color: 
-#059669; text-decoration: none;"> 
-            <span style="font-size: 1.5rem;">  </span> 
-            <span style="font-size: 1.25rem; font-weight: bold; color: 
-#065f46;">GreenThumb</span> 
-        </a> 
-         
-        <nav class="desktop-nav"> 
-            <a href="index.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Home</a> 
-            <a href="crops.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; background: #d1fae5; color: #065f46; font-weight: 600;">Crop 
-Guide</a> 
-            <a href="planner.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Garden Planner</a> 
-            <a href="pests.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Pest Control</a> 
-            <a href="seasons.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Season Guide</a> 
-            <a href="resources.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; 
-text-decoration: none; color: #374151;">Resources</a> 
-            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a> 
-            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a> 
-        </nav> 
-         
-    </div> 
+<header>
+    <div class="container">
+        <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; color: #059669; text-decoration: none;">
+            <span style="font-size: 1.5rem;">🌱</span>
+            <span style="font-size: 1.25rem; font-weight: bold; color: #065f46;">GreenThumb</span>
+        </a>
+        
+        <nav class="desktop-nav">
+            <a href="index.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Home</a>
+            <a href="crops.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; background: #d1fae5; color: #065f46; font-weight: 600;">Crop Guide</a>
+            <a href="planner.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Garden Planner</a>
+            <a href="pests.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Pest Control</a>
+            <a href="seasons.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Season Guide</a>
+            <a href="resources.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Resources</a>
+            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a>
+            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a>
+        </nav>
+        
+    </div>
 </header> 
  
-<main> 
-    <!-- Hero Section --> 
-    <section style="background: #059669; color: white; padding: 3rem 1.5rem;"> 
-        <div style="max-width: 80rem; margin: 0 auto;"> 
-            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem;">Crop 
-Guide</h2> 
-            <p style="font-size: 1.25rem;">Explore common crops and learn how to grow 
-them successfully.</p> 
-        </div> 
-    </section> 
-     
-    <!-- Content Section --> 
-    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;"> 
-        <div id="react-wishlist-root"></div>
-         
-        <!-- Search & Filter Section --> 
-        <div style="background: white; padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"> 
-            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; color: 
-#065f46;">    Search & Filter Crops</h3> 
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;"> 
-                <input type="text" id="searchInput" placeholder="Search crops..." style="flex: 2; 
-padding: 0.6rem 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;"> 
-                <select id="seasonFilter" style="flex: 1; padding: 0.6rem 1rem; border: 1px solid 
-#e5e7eb; border-radius: 0.5rem;"> 
-                    <option value="all">All Seasons</option> 
-                    <option value="Summer">   Summer</option> 
-                    <option value="Spring/Fall">   Spring/Fall</option> 
-                    <option value="Fall">       Fall</option> 
-                </select> 
-            </div> 
-        </div> 
-         
-        <!-- Crops Grid with Images --> 
+<main>
+    <section style="background: #059669; color: white; padding: 3rem 1.5rem;">
+        <div style="max-width: 80rem; margin: 0 auto;">
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem;">Crop Guide</h2>
+            <p style="font-size: 1.25rem;">Explore common crops and learn how to grow them successfully.</p>
+        </div>
+    </section>
+    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">
+        <div style="background: white; padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; color: #065f46;">🔍 Search & Filter Crops</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <input type="text" id="searchInput" placeholder="Search crops..." style="flex: 2; padding: 0.6rem 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                <select id="seasonFilter" style="flex: 1; padding: 0.6rem 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem;">
+                    <option value="all">All Seasons</option>
+                    <option value="Summer"> Summer</option>
+                    <option value="Spring/Fall"> Spring/Fall</option>
+                    <option value="Fall"> Fall</option>
+                </select>
+            </div>
+        </div>
         <div class="cards-grid" id="cropsContainer"> 
-            <!-- Tomatoes --> 
             <div class="card" data-name="Tomatoes" data-season="Summer"> 
                 <img src="https://images.unsplash.com/photo-1607305387299-a3d9611cd469?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9tYXRvfGVufDB8fDB8fHww" alt="Fresh ripe tomatoes" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Tomatoes'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">      
-Tomatoes</h3> 
-                    <p style="color: #6b7280;">Grow best in warm weather with full sunlight and 
-regular watering. Space 24-36 inches apart.</p> 
-                    <span class="season-badge">   Summer</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;"> Tomatoes</h3> 
+                    <p style="color: #6b7280;">Grow best in warm weather with full sunlight and regular watering. Space 24-36 inches apart.</p> 
+                    <span class="season-badge"> Summer</span> 
                 </div> 
             </div> 
-             
-            <!-- Carrots --> 
             <div class="card" data-name="Carrots" data-season="Spring/Fall"> 
                 <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fycm90c3xlbnwwfHwwfHx8MA%3D%3D" alt="Organic carrots in soil" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Carrots'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">      
-Carrots</h3> 
-                    <p style="color: #6b7280;">Prefer loose soil and cooler temperatures for 
-straight roots. Space 2-3 inches apart.</p> 
-                    <span class="season-badge">   Spring/Fall</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;"> Carrots</h3> 
+                    <p style="color: #6b7280;">Prefer loose soil and cooler temperatures for straight roots. Space 2-3 inches apart.</p> 
+                    <span class="season-badge"> Spring/Fall</span> 
                 </div> 
             </div> 
-             
-            <!-- Lettuce --> 
             <div class="card" data-name="Lettuce" data-season="Spring/Fall"> 
                 <img src="https://images.unsplash.com/photo-1640958904159-51ae08bd3412?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGV0dHVjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Green lettuce growing in garden" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Lettuce'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">    
-Lettuce</h3> 
-                    <p style="color: #6b7280;">Fast-growing leafy green ideal for spring and fall 
-seasons. Space 8-12 inches apart.</p> 
-                    <span class="season-badge">   Spring/Fall</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;"> Lettuce</h3> 
+                    <p style="color: #6b7280;">Fast-growing leafy green ideal for spring and fall seasons. Space 8-12 inches apart.</p> 
+                    <span class="season-badge"> Spring/Fall</span> 
                 </div> 
             </div> 
-             
-            <!-- Peppers --> 
             <div class="card" data-name="Peppers" data-season="Summer"> 
                 <img src="https://images.unsplash.com/photo-1607546900609-7efd29a4a2dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlcHBlcnN8ZW58MHx8MHx8fDA%3D" alt="Fresh peppers growing" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Peppers'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">     
-Peppers</h3> 
-                    <p style="color: #6b7280;">Hot weather crop, needs well-drained soil. Space 
-18-24 inches apart.</p> 
-                    <span class="season-badge">   Summer</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;"> Peppers</h3> 
+                    <p style="color: #6b7280;">Hot weather crop, needs well-drained soil. Space 18-24 inches apart.</p> 
+                    <span class="season-badge"> Summer</span> 
                 </div> 
             </div> 
-             
-            <!-- Cucumbers --> 
             <div class="card" data-name="Cucumbers" data-season="Summer"> 
                 <img src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q3VjdW1iZXJzfGVufDB8fDB8fHww" alt="Fresh cucumbers on vine" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Cucumbers'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">     
-Cucumbers</h3> 
-                    <p style="color: #6b7280;">Warm season crop, needs trellising. Space 12-24 
-inches apart.</p> 
-                    <span class="season-badge">   Summer</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">     Cucumbers</h3> 
+                    <p style="color: #6b7280;">Warm season crop, needs trellising. Space 12-24 inches apart.</p> 
+                    <span class="season-badge"> Summer</span> 
                 </div> 
             </div> 
-             
-            <!-- Broccoli --> 
             <div class="card" data-name="Broccoli" data-season="Fall"> 
                 <img src="https://plus.unsplash.com/premium_photo-1702403157830-9df749dc6c1e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QnJvY2NvbGl8ZW58MHx8MHx8fDA%3D" alt="Fresh broccoli heads" class="crop-image" 
 onerror="this.src='https://placehold.co/400x200/e2e8f0/2d3748?text=Broccoli'"> 
                 <div style="padding: 1.5rem;"> 
-                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">   
-Broccoli</h3> 
-                    <p style="color: #6b7280;">Cool season crop, rich soil. Space 18-24 inches 
-apart.</p> 
-                    <span class="season-badge">       Fall</span> 
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;"> Broccoli</h3> 
+                    <p style="color: #6b7280;">Cool season crop, rich soil. Space 18-24 inches apart.</p> 
+                    <span class="season-badge"> Fall</span> 
                 </div> 
             </div> 
         </div> 
-         
-        <!-- Back link --> 
-        <div style="text-align: center; margin-top: 2rem;"> 
-            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: 
-none;">← Back to Home</a> 
-        </div> 
-    </section> 
-</main> 
- 
-<footer> 
-    <div style="max-width: 80rem; margin: 0 auto;"> 
-        <div class="footer-grid"> 
-            <div> 
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 
-1rem;"> 
-                    <span style="font-size: 1.5rem;">  </span> 
-                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span> 
-                </div> 
-                <p style="color: #a7f3d0;">Your farming and gardening companion.</p> 
-            </div> 
-             
-            <div> 
-                <h4 style="font-weight: bold; margin-bottom: 1rem;">Quick Links</h4> 
-                <ul style="list-style: none;"> 
-                    <li><a href="index.html" style="color: #a7f3d0; text-decoration: 
-none;">Home</a></li> 
-                    <li><a href="planner.html" style="color: #a7f3d0; text-decoration: 
-none;">Garden Planner</a></li> 
-                    <li><a href="seasons.html" style="color: #a7f3d0; text-decoration: 
-none;">Season Guide</a></li> 
-                </ul> 
-            </div> 
-             
-            <div> 
-                <h4 style="font-weight: bold; margin-bottom: 1rem;">Contact</h4> 
-                <p>        support@greenthumb.com</p> 
-                <p>    Farm Country, USA</p> 
-            </div> 
-        </div> 
-         
-        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; 
-color: #6ee7b7;"> 
-            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p> 
-            <p style="margin-top: 0.5rem;">Grow naturally, grow sustainably.</p> 
-        </div> 
-    </div> 
-</footer> 
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: none;">← Back to Home</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div style="max-width: 80rem; margin: 0 auto;">
+        <div class="footer-grid">
+            <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="font-size: 1.5rem;">🌱</span>
+                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span>
+                </div>
+                <p style="color: #a7f3d0;">Your farming and gardening companion.</p>
+            </div>
+            
+            <div>
+                <h4 style="font-weight: bold; margin-bottom: 1rem;">Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="index.html" style="color: #a7f3d0; text-decoration: none;">Home</a></li>
+                    <li><a href="planner.html" style="color: #a7f3d0; text-decoration: none;">Garden Planner</a></li>
+                    <li><a href="seasons.html" style="color: #a7f3d0; text-decoration: none;">Season Guide</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="font-weight: bold; margin-bottom: 1rem;">Contact</h4>
+                <p>📧 support@greenthumb.com</p>
+                <p>📍 Farm Country, USA</p>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; color: #6ee7b7;">
+            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">Grow naturally, grow sustainably.</p>
+        </div>
+    </div>
+</footer>
+
  
 <script> 
     const searchInput = document.getElementById('searchInput'); 
