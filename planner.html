@@ -1,0 +1,441 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Garden Planner | GreenThumb</title> 
+    <style> 
+        * { margin: 0; padding: 0; box-sizing: border-box; } 
+        body { font-family: system-ui, sans-serif; background: #f9fafb; color: #374151; line-height: 1.5; } 
+        .container { max-width: 80rem; margin: 0 auto; display: flex; justify-content: space
+between; align-items: center; } 
+        header { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1rem; 
+position: sticky; top: 0; z-index: 10; } 
+        .tips-box { background: #f0fdf4; padding: 2rem; border: 1px solid #bbf7d0; border-radius: 1rem; margin-bottom: 2rem; } 
+        .cards-grid { display: grid; gap: 1.5rem; } 
+        .card { background: white; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: 
+hidden; } 
+        .card div { padding: 1.5rem; } 
+        .footer-grid { display: grid; gap: 2rem; margin-bottom: 2rem; } 
+        footer { background: #065f46; color: white; padding: 3rem 1.5rem; } 
+        input, textarea { font-family: inherit; } 
+         
+        /* Canvas styles */ 
+        .canvas-box { background: #fefce8; padding: 2rem; border: 1px solid #fde047; 
+border-radius: 1rem; margin-bottom: 2rem; } 
+        .garden-canvas { border: 2px dashed #059669; border-radius: 0.75rem; background: 
+#fffeef; cursor: crosshair; width: 100%; max-width: 600px; height: auto; display: block; 
+margin: 0 auto; } 
+        .canvas-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; 
+} 
+        .btn-small { background: #059669; color: white; padding: 0.5rem 1rem; border: 
+none; border-radius: 0.5rem; cursor: pointer; } 
+        .btn-small:hover { background: #047857; } 
+        .canvas-status { text-align: center; margin-top: 0.5rem; font-size: 0.75rem; color: 
+#9ca3af; } 
+         
+        @media (min-width: 768px) { 
+            .desktop-nav { display: flex; gap: 0.5rem; } 
+            .cards-grid { grid-template-columns: repeat(3, 1fr); } 
+            .footer-grid { grid-template-columns: repeat(3, 1fr); } 
+        } 
+        .section-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46; } 
+        .form-group { flex: 1; min-width: 120px; } 
+        .form-label { display: block; font-size: 0.75rem; color: #065f46; margin-bottom: 
+0.25rem; } 
+        .form-input { width: 100%; padding: 0.6rem; border-radius: 0.5rem; border: 1px solid 
+#ddd; font-family: inherit; } 
+        .btn-calc { background: #059669; color: white; padding: 0.6rem 1.5rem; border: 
+none; border-radius: 0.5rem; cursor: pointer; font-weight: bold; } 
+        .btn-save { background: #f59e0b; color: white; padding: 0.5rem 1.25rem; border: 
+none; border-radius: 0.5rem; cursor: pointer; font-weight: bold; } 
+        .flex-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end; } 
+        .result-box { margin-top: 1rem; padding: 0.75rem; background: white; border-radius: 
+0.5rem; display: none; } 
+        .notes-box { background: #fffbeb; border-color: #fde047; } 
+        .textarea-input { width: 100%; border-radius: 0.5rem; padding: 0.75rem; border: 1px 
+solid #ddd; margin-bottom: 1rem; font-family: inherit; } 
+    </style> 
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head> 
+<body> 
+ 
+<header> 
+    <div class="container"> 
+        <a href="index.html" style="display:flex;align-items:center;gap:0.5rem;color:#059669;text-decoration:none;"> 
+            <span style="font-size:1.5rem;">  </span> 
+            <span style="font-size:1.25rem;font-weight:bold;color:#065f46;">GreenThumb</span> 
+        </a> 
+        <nav class="desktop-nav"> 
+            <a href="index.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Home</a> 
+            <a href="crops.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Crop Guide</a> 
+            <a href="planner.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;background:#d1fae5;color:#065f46;font-weight:600;">Garden 
+Planner</a> 
+            <a href="pests.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Pest Control</a> 
+            <a href="seasons.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Season Guide</a> 
+            <a href="resources.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Resources</a> 
+            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a> 
+            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a> 
+        </nav> 
+    </div> 
+</header> 
+ 
+<main>  
+    <section style="background: #2563eb; color: white; padding: 3rem 1.5rem;">  
+        <div style="max-width: 80rem; margin: 0 auto;">  
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem;">Garden 
+Planner</h2>  
+            <p style="font-size: 1.25rem;">Essential planning tips for your garden</p>  
+        </div>  
+    </section>  
+ 
+    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">  
+         
+        <!-- Garden Planning Basics --> 
+        <div class="tips-box">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">   Garden Planning Basics</h3>  
+            <ul style="padding-left: 1.5rem;">  
+                <li>Choose a location with 6-8 hours of sunlight daily</li>  
+                <li>Test soil pH before planting (ideal: 6.0-7.0 for most vegetables)</li>  
+                <li>Prepare soil by adding 2-3 inches of compost</li>  
+                <li>Plan layout with tall plants on north side to avoid shading</li>  
+                <li>Leave walking paths between garden beds</li>  
+            </ul>  
+        </div>  
+ 
+        <div style="background: #eff6ff; padding: 2rem; border: 1px solid #93c5fd; border-radius: 1rem; margin-bottom: 2rem;">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">           Plant Spacing Guidelines</h3>  
+            <ul style="padding-left: 1.5rem;">  
+                <li>Tomatoes: Space 24-36 inches apart</li> 
+                <li>Carrots: Space 2-3 inches apart</li>  
+                <li>Lettuce: Space 8-12 inches apart</li>  
+                <li>Beans: Space 4-6 inches apart</li>  
+                <li>Cucumbers: Space 12-24 inches apart</li>  
+                <li>Radishes: Space 1-2 inches apart</li>  
+            </ul>  
+        </div>  
+ 
+        <!-- Companion Planting Guide --> 
+        <div style="background: #fef2f2; padding: 2rem; border: 1px solid #fca5a5; border-radius: 1rem; margin-bottom: 2rem;">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">       Companion Planting Guide</h3>  
+            <ul style="padding-left: 1.5rem;">  
+                <li>Tomatoes grow well with basil, carrots, and onions</li>  
+                <li>Carrots grow well with tomatoes, lettuce, and rosemary</li>  
+                <li>Cucumbers grow well with beans, corn, and radishes</li>  
+                <li>Marigolds repel pests when planted throughout garden</li>  
+                <li>Avoid planting tomatoes with cabbage or potatoes</li>  
+            </ul>  
+        </div>  
+ 
+        <!-- Seasonal Planting Schedule --> 
+        <div style="background: #fef3c7; padding: 2rem; border: 1px solid #fbbf24; border-radius: 1rem; margin-bottom: 2rem;">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">             Seasonal Planting Schedule</h3>  
+            <ul style="padding-left: 1.5rem;">  
+                <li><strong>Early Spring:</strong> Lettuce, spinach, peas, radishes</li>  
+                <li><strong>Late Spring:</strong> Tomatoes, peppers, beans, corn</li>  
+                <li><strong>Summer:</strong> Cucumbers, squash, melons, okra</li>  
+                <li><strong>Early Fall:</strong> Kale, broccoli, carrots, beets</li>  
+                <li><strong>Late Fall:</strong> Garlic, onions, cover crops</li>  
+            </ul>  
+        </div>  
+ 
+        <!-- Plant Spacing Calculator --> 
+        <div class="tips-box"> 
+            <h3 class="section-title">           Plant Spacing Calculator</h3> 
+            <div class="flex-row"> 
+                <div class="form-group"> 
+                    <label class="form-label">Crop Name</label> 
+                    <input type="text" id="cropName" placeholder="e.g., Tomatoes" class="form
+input"> 
+                </div> 
+                <div class="form-group"> 
+                    <label class="form-label">Area (sq.ft)</label> 
+                    <input type="number" id="areaSqft" placeholder="Area" value="10" 
+class="form-input"> 
+                </div> 
+                <div class="form-group"> 
+                    <label class="form-label">Spacing (inches)</label> 
+                    <input type="number" id="spacingInches" placeholder="Spacing" value="12" 
+class="form-input"> 
+                </div> 
+                <button id="calcBtn" class="btn-calc">Calculate</button> 
+            </div> 
+            <div id="calcResult" class="result-box"></div> 
+        </div> 
+ 
+        <!-- Canvas Sketch Section --> 
+        <div class="canvas-box"> 
+            <h3 class="section-title">      Sketch Your Garden Layout</h3> 
+            <p style="text-align: center; color: #6b7280; margin-bottom: 1rem;">Click and 
+drag on the canvas to draw your garden design</p> 
+            <canvas id="gardenCanvas" class="garden-canvas" width="600" 
+height="400"></canvas> 
+            <div class="canvas-buttons"> 
+                <button class="btn-small" id="clearCanvasBtn">    Clear Canvas</button> 
+                <button class="btn-small" id="saveCanvasBtn">       Save Sketch</button> 
+            </div> 
+            <div id="canvasStatus" class="canvas-status"></div> 
+        </div> 
+ 
+        <!-- Garden Notes --> 
+        <div class="tips-box notes-box"> 
+            <h3 class="section-title">          My Garden Notes</h3> 
+            <textarea id="gardenNote" rows="4" placeholder="Write your garden notes here..." 
+class="textarea-input"></textarea> 
+            <button id="saveNoteBtn" class="btn-save">       Save Notes</button> 
+        </div> <div id="react-inventory-root" style="margin-top: 2rem;"></div>
+ 
+        <!-- Layout Planning Tips --> 
+        <div class="tips-box">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">           Layout Planning Tips</h3>  
+            <ul style="padding-left: 1.5rem;"> 
+                <li>Use the "square foot gardening" method for small spaces</li>  
+                <li>Rotate crops each year to prevent soil diseases</li>  
+                <li>Group plants with similar water needs together</li>  
+                <li>Include pollinator-friendly flowers for better yields</li>  
+                <li>Plan for succession planting to extend harvest season</li>  
+            </ul>  
+        </div>  
+ 
+        <!-- Gardening Tips --> 
+        <div style="background: #f0fdf4; padding: 2rem; border: 1px solid #bbf7d0; border-radius: 1rem;">  
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">      Gardening Tips</h3>  
+            <ul style="padding-left: 1.5rem;">  
+                <li>Plant complementary plants together</li>  
+                <li>Rotate crops each season</li>  
+                <li>Water plants early in the morning</li>  
+                <li>Use organic compost</li>  
+            </ul>  
+        </div>  
+ 
+        <div style="text-align: center; margin-top: 3rem;"> 
+            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: 
+none;">← Back to Home</a> 
+        </div> 
+    </section>  
+</main>  
+ 
+<footer> 
+    <div style="max-width: 80rem; margin: 0 auto;"> 
+        <div class="footer-grid"> 
+            <div> 
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 
+1rem;"> 
+                    <span style="font-size: 1.5rem;">  </span> 
+                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span> 
+                </div> 
+                <p style="color: #a7f3d0;">Your farming and gardening companion.</p> 
+            </div> 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem;">Quick Links</h4> 
+                <ul style="list-style: none;"> 
+                    <li><a href="index.html" style="color: #a7f3d0; text-decoration: 
+none;">Home</a></li> 
+                    <li><a href="crops.html" style="color: #a7f3d0; text-decoration: none;">Crop 
+Guide</a></li> 
+                    <li><a href="seasons.html" style="color: #a7f3d0; text-decoration: 
+none;">Season Guide</a></li> 
+                </ul> 
+            </div> 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem;">Contact</h4> 
+                <p>        support@greenthumb.com</p> 
+            </div> 
+        </div> 
+        <div style="text-align: center; margin-top: 2rem; color: #6ee7b7;"> 
+            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p> 
+        </div> 
+    </div> 
+</footer> 
+ 
+<script> 
+    // Calculator functionality 
+    document.getElementById('calcBtn')?.addEventListener('click', function() { 
+        let crop = document.getElementById('cropName').value || 'plants'; 
+        let area = parseFloat(document.getElementById('areaSqft').value); 
+        let space = parseFloat(document.getElementById('spacingInches').value); 
+        let result = document.getElementById('calcResult'); 
+         
+        if(area > 0 && space > 0) { 
+            let total = Math.floor((area * 144) / (space * space)); 
+            result.innerHTML = `   You can plant <strong>${total}</strong> ${crop} in ${area} 
+sq.ft (${space}" spacing)`; 
+            result.style.display = 'block'; 
+            result.style.background = '#d1fae5'; 
+        } else { 
+            result.innerHTML = '    Please enter valid numbers greater than 0'; 
+            result.style.display = 'block'; 
+            result.style.background = '#fee2e2'; 
+        } 
+    }); 
+ 
+    // Garden Notes with LocalStorage 
+    let note = document.getElementById('gardenNote'); 
+    if(note) { 
+        note.value = localStorage.getItem('gardenNote') || ''; 
+        document.getElementById('saveNoteBtn')?.addEventListener('click', () => { 
+            localStorage.setItem('gardenNote', note.value); 
+            alert('   Garden notes saved!'); 
+        }); 
+    } 
+ 
+    // ========== CANVAS DRAWING ========== 
+    const canvas = document.getElementById('gardenCanvas'); 
+    if (canvas) { 
+        const ctx = canvas.getContext('2d'); 
+        canvas.width = 600; 
+        canvas.height = 400; 
+         
+        ctx.strokeStyle = '#059669'; 
+        ctx.lineWidth = 3; 
+        ctx.lineCap = 'round'; 
+        ctx.lineJoin = 'round'; 
+         
+        // Load saved drawing 
+        const savedDrawing = localStorage.getItem('gardenSketch'); 
+        if (savedDrawing) { 
+            const img = new Image(); 
+            img.onload = () => ctx.drawImage(img, 0, 0); 
+            img.src = savedDrawing; 
+        } 
+         
+        let isDrawing = false; 
+        let lastX = 0, lastY = 0; 
+         
+        function startDrawing(e) { 
+            isDrawing = true; 
+            const rect = canvas.getBoundingClientRect(); 
+            const scaleX = canvas.width / rect.width; 
+            const scaleY = canvas.height / rect.height; 
+            lastX = (e.clientX - rect.left) * scaleX; 
+            lastY = (e.clientY - rect.top) * scaleY; 
+            ctx.beginPath(); 
+            ctx.moveTo(lastX, lastY); 
+        } 
+         
+        function draw(e) { 
+            if (!isDrawing) return; 
+            e.preventDefault(); 
+            const rect = canvas.getBoundingClientRect(); 
+            const scaleX = canvas.width / rect.width; 
+            const scaleY = canvas.height / rect.height; 
+            const currentX = (e.clientX - rect.left) * scaleX; 
+            const currentY = (e.clientY - rect.top) * scaleY; 
+             
+            ctx.lineTo(currentX, currentY); 
+            ctx.stroke(); 
+            ctx.beginPath(); 
+            ctx.moveTo(currentX, currentY); 
+            lastX = currentX; 
+            lastY = currentY; 
+        } 
+         
+        function stopDrawing() { 
+            isDrawing = false; 
+            ctx.beginPath(); 
+        } 
+         
+        canvas.addEventListener('mousedown', startDrawing); 
+        canvas.addEventListener('mousemove', draw); 
+        canvas.addEventListener('mouseup', stopDrawing); 
+        canvas.addEventListener('mouseleave', stopDrawing); 
+         
+        // Clear Canvas 
+        document.getElementById('clearCanvasBtn')?.addEventListener('click', () => { 
+            if (confirm('Clear your garden sketch?')) { 
+                ctx.clearRect(0, 0, canvas.width, canvas.height); 
+                localStorage.removeItem('gardenSketch'); 
+                document.getElementById('canvasStatus').innerHTML = '    Canvas cleared!'; 
+                setTimeout(() => document.getElementById('canvasStatus').innerHTML = '', 
+2000); 
+            } 
+        }); 
+         
+        // Save Canvas 
+        document.getElementById('saveCanvasBtn')?.addEventListener('click', () => { 
+            const dataURL = canvas.toDataURL(); 
+            localStorage.setItem('gardenSketch', dataURL); 
+            alert('   Garden sketch saved!'); 
+            document.getElementById('canvasStatus').innerHTML = '       Sketch saved!'; 
+            setTimeout(() => document.getElementById('canvasStatus').innerHTML = '', 2000); 
+        }); 
+    } 
+</script> 
+<script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function SeedInventory() {
+        const [seeds, setSeeds] = useState(() => {
+            const saved = localStorage.getItem('reactSeeds');
+            return saved ? JSON.parse(saved) : [];
+        });
+        const [input, setInput] = useState('');
+
+        useEffect(() => {
+            localStorage.setItem('reactSeeds', JSON.stringify(seeds));
+        }, [seeds]);
+
+        const addSeed = () => {
+            if(input.trim()) {
+                setSeeds([...seeds, { id: Date.now(), name: input, count: 1 }]);
+                setInput('');
+            }
+        };
+
+        const updateCount = (id, delta) => {
+            setSeeds(seeds.map(s => {
+                if(s.id === id) {
+                    return { ...s, count: Math.max(0, s.count + delta) };
+                }
+                return s;
+            }));
+        };
+
+        const removeSeed = (id) => {
+            setSeeds(seeds.filter(s => s.id !== id));
+        };
+
+        return (
+            <div className="tips-box">
+                <h3 className="section-title">Seed Inventory Tracker</h3>
+                <p style={{marginBottom: '10px', fontSize: '0.9rem'}}>Track your available seed packets and quantities.</p>
+                <div style={{ display: 'flex', gap: '10px', marginBottom: '15px' }}>
+                    <input 
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        style={{flex: 1, padding: '8px', borderRadius: '5px', border: '1px solid #ccc'}}
+                        placeholder="e.g. Heirloom Tomatoes"
+                    />
+                    <button onClick={addSeed} style={{padding: '8px 15px', background: '#059669', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Add</button>
+                </div>
+                <div>
+                    {seeds.map(seed => (
+                        <div key={seed.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px', background: 'white', marginBottom: '8px', borderRadius: '8px', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+                            <span style={{fontWeight: '500'}}>{seed.name}</span>
+                            <div style={{display: 'flex', alignItems: 'center'}}>
+                                <button onClick={() => updateCount(seed.id, -1)} style={{width: '25px', height: '25px', border: '1px solid #ccc', background: 'none', borderRadius: '4px'}}>-</button>
+                                <span style={{width: '40px', textAlign: 'center', fontWeight: 'bold'}}>{seed.count}</span>
+                                <button onClick={() => updateCount(seed.id, 1)} style={{width: '25px', height: '25px', border: '1px solid #ccc', background: 'none', borderRadius: '4px'}}>+</button>
+                                <button onClick={() => removeSeed(seed.id)} style={{marginLeft: '15px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem'}}>×</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('react-inventory-root'));
+    root.render(<SeedInventory />);
+</script>
+</body> 
+</html>

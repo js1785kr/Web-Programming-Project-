@@ -1,0 +1,243 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>GreenThumb | Farming & Gardening Assistance Platform</title> 
+    <style> 
+        .crop-image { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 0.75rem; 
+            margin-bottom: 1rem; 
+        } 
+ 
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+        } 
+         
+        body {  
+            font-family: system-ui, sans-serif;  
+            background: #f9fafb;  
+            color: #374151;  
+            line-height: 1.5;  
+        } 
+         
+        .container {  
+            max-width: 80rem;  
+            margin: 0 auto;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+        } 
+         
+        header {  
+            background: white;  
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);  
+            padding: 1rem;  
+            position: sticky;  
+            top: 0;  
+            z-index: 10;  
+        } 
+         
+        .features-grid {  
+            display: grid;  
+            gap: 2rem;  
+        } 
+         
+        .cards-grid {  
+            display: grid;  
+            gap: 1.5rem;  
+            margin-bottom: 3rem;  
+        } 
+         
+        .card {  
+            background: white;  
+            border: 1px solid #e5e7eb;  
+            border-radius: 1rem;  
+            overflow: hidden;  
+            transition: transform 0.3s, box-shadow 0.3s; 
+        } 
+         
+        .card:hover {  
+            transform: translateY(-5px);  
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);  
+        } 
+         
+        .tips-box {  
+            background: #f0fdf4;  
+            padding: 2rem;  
+            border: 1px solid #bbf7d0;  
+            border-radius: 1rem;  
+            margin-bottom: 2rem;  
+        } 
+         
+        footer {  
+            background: #065f46;  
+            color: white;  
+            padding: 3rem 1.5rem;  
+        } 
+         
+        .footer-grid {  
+            display: grid;  
+            gap: 2rem;  
+            margin-bottom: 2rem;  
+        } 
+         
+        @media (min-width: 768px) { 
+            .desktop-nav {  
+                display: flex;  
+                gap: 0.5rem;  
+            } 
+            .features-grid {  
+                grid-template-columns: repeat(3, 1fr);  
+            } 
+            .cards-grid {  
+                grid-template-columns: repeat(3, 1fr);  
+            } 
+            .footer-grid {  
+                grid-template-columns: repeat(3, 1fr);  
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+<header> 
+    <div class="container"> 
+        <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; color: 
+#059669; text-decoration: none;"> 
+            <span style="font-size: 1.5rem;">  </span> 
+            <span style="font-size: 1.25rem; font-weight: bold; color: 
+#065f46;">GreenThumb</span> 
+        </a> 
+ 
+        <nav style="display: flex; gap: 0.5rem;"> 
+            <a href="index.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; background: #d1fae5; color: #065f46; font-weight: 600;">Home</a> 
+            <a href="crops.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Crop Guide</a> 
+            <a href="planner.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Garden Planner</a> 
+            <a href="pests.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Pest Control</a> 
+            <a href="seasons.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #374151;">Season Guide</a> 
+            <a href="resources.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; 
+text-decoration: none; color: #374151;">Resources</a> 
+            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a> 
+            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a> 
+        </nav> 
+    </div> 
+</header> 
+ 
+<main> 
+    <section style="background: linear-gradient(to right, #059669, #047857); color: white; 
+padding: 4rem 1.5rem; text-align: center;"> 
+        <div style="max-width: 72rem; margin: 0 auto;"> 
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1.5rem;">Grow 
+Your Garden with Confidence</h2> 
+            <p style="font-size: 1.25rem; color: #d1fae5; margin-bottom: 2.5rem;">Your 
+complete farming and gardening assistant.</p> 
+            <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: 
+center;"> 
+                <a href="crops.html" style="background: white; color: #059669; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: bold; text-decoration: none; text-align: center; display: inline-block;">Explore Crops</a> 
+                <a href="planner.html" style="background: transparent; border: 2px solid white; 
+color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: bold; text-decoration: none; text-align: center; display: inline-block;">Plan Your Garden</a> 
+            </div> 
+        </div> 
+    </section> 
+ 
+    <section style="padding: 4rem 1.5rem; max-width: 80rem; margin: 0 auto;"> 
+        <h2 style="font-size: 1.875rem; font-weight: bold; text-align: center; margin-bottom: 
+3rem;">Everything You Need to Succeed</h2> 
+ 
+        <div class="features-grid"> 
+            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 1rem; 
+padding: 2rem;"> 
+                <div style="background: #d1fae5; color: #059669; width: 3.5rem; height: 
+3.5rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: 
+center; font-size: 1.5rem; margin-bottom: 1.5rem;">       </div> 
+                <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 
+0.75rem;">Crop Guide</h3> 
+                <p style="color: #6b7280;">Database of crops with growing instructions and 
+harvest information.</p> 
+            </div> 
+ 
+            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 1rem; 
+padding: 2rem;"> 
+                <div style="background: #dbeafe; color: #2563eb; width: 3.5rem; height: 
+3.5rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: 
+center; font-size: 1.5rem; margin-bottom: 1.5rem;">            </div> 
+                <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 
+0.75rem;">Garden Planner</h3> 
+                <p style="color: #6b7280;">Plan your garden layout and manage your growing 
+schedule.</p> 
+            </div> 
+ 
+            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 1rem; 
+padding: 2rem;"> 
+                <div style="background: #fee2e2; color: #dc2626; width: 3.5rem; height: 
+3.5rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: 
+center; font-size: 1.5rem; margin-bottom: 1.5rem;">             </div> 
+                <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 
+0.75rem;">Pest Control</h3> 
+                <p style="color: #6b7280;">Identify and treat common pests and diseases.</p> 
+            </div> 
+        </div> 
+    </section> 
+</main> 
+ 
+<footer> 
+    <div style="max-width: 80rem; margin: 0 auto;"> 
+        <div class="footer-grid"> 
+            <div> 
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 
+1rem;"> 
+                    <span style="font-size: 1.5rem;">  </span> 
+                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span> 
+                </div> 
+                <p style="color: #a7f3d0;">Your farming and gardening companion.</p> 
+            </div> 
+ 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
+letter-spacing: 0.05em;">Quick Links</h4> 
+                <ul style="list-style: none;"> 
+                    <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: 
+#a7f3d0; text-decoration: none;">Home</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="crops.html" style="color: 
+#a7f3d0; text-decoration: none;">Crop Guide</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="planner.html" style="color: 
+#a7f3d0; text-decoration: none;">Garden Planner</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="seasons.html" style="color: 
+#a7f3d0; text-decoration: none;">Season Guide</a></li> 
+                </ul> 
+            </div> 
+ 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
+letter-spacing: 0.05em;">Contact Us</h4> 
+                <ul style="list-style: none;"> 
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
+0.5rem;"> 
+                        <span>       </span> 
+                        <span>support@greenthumb.com</span> 
+                    </li> 
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
+0.5rem;"> 
+                        <span>   </span> 
+                        <span>Farm Country, USA</span> 
+                    </li> 
+                </ul> 
+            </div> 
+        </div> 
+ 
+        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; 
+color: #6ee7b7;"> 
+            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p> 
+            <p style="margin-top: 2rem;">Grow naturally, grow sustainably.</p> 
+        </div> 
+    </div> 
+</footer> 
+ 
+</body> 
+</html>

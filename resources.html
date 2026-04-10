@@ -1,0 +1,275 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Resources & Tools | GreenThumb</title> 
+     
+    <link rel="stylesheet" href="styles.css"> 
+     
+    <style> 
+        .resource-checklist { list-style: none; padding: 0; margin: 1rem 0; } 
+        .resource-checklist li { padding: 0.75rem; margin: 0.5rem 0; background: white; 
+border-radius: 0.5rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: 
+center; gap: 0.75rem; border: 1px solid #e5e7eb; } 
+        .resource-checklist li:hover { background: #f3f4f6; transform: translateX(5px); } 
+        .resource-checklist li.checked { background: #d1fae5; text-decoration: line-through; 
+color: #6b7280; border-color: #bbf7d0; } 
+        .checklist-comment { margin-top: 1rem; padding: 0.75rem; border-radius: 0.5rem; 
+text-align: center; font-weight: bold; } 
+        .comment-success { background: #d1fae5; color: #065f46; border: 1px solid 
+#bbf7d0; } 
+        .comment-progress { background: #fef3c7; color: #92400e; border: 1px solid 
+#fde047; } 
+    </style> 
+</head> 
+<body> 
+ 
+<<header> 
+    <div class="container"> 
+        <a href="index.html" style="display:flex;align-items:center;gap:0.5rem;color:#059669;text-decoration:none;"> 
+            <span style="font-size:1.5rem;">  </span> 
+            <span style="font-size:1.25rem;font-weight:bold;color:#065f46;">GreenThumb</span> 
+        </a> 
+        <nav class="desktop-nav"> 
+            <a href="index.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Home</a> 
+            <a href="crops.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Crop Guide</a> 
+            <a href="planner.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Garden Planner</a> 
+            <a href="pests.html" style="padding:0.5rem 1rem;border-radius:0.5rem;background:#d1fae5;color:#065f46;font-weight:600;text-decoration:none;">Pest Control</a> 
+            <a href="seasons.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Season Guide</a> 
+            <a href="resources.html" style="padding:0.5rem 1rem;border-radius:0.5rem;text-decoration:none;color:#374151;">Resources</a> 
+            <a href="login.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669; font-weight: 600;">Login</a> 
+            <a href="register.html" style="padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; color: #059669;">Register</a> 
+        </nav> 
+    </div> 
+</header> 
+ 
+<main> 
+    <!-- Header Section --> 
+    <section style="background: #0d9488; color: white; padding: 3rem 1.5rem;"> 
+        <div style="max-width: 80rem; margin: 0 auto;"> 
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 
+1rem;">Resources & Tools</h2> 
+            <p style="font-size: 1.25rem;">Essential gardening resources and helpful 
+tools</p> 
+        </div> 
+    </section> 
+     
+    <!-- Content Section --> 
+    <section style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;"> 
+         
+        <!-- Resource Box 1 --> 
+        <div style="background: #eff6ff; padding: 2rem; border: 1px solid #93c5fd; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">             Essential Gardening Resources</h3> 
+            <p style="margin-bottom: 1rem;">Successful gardening requires access to the 
+right resources and tools. Here are essential items every gardener should have:</p> 
+            <ul style="padding-left: 1.5rem;"> 
+                <li><strong>Soil Testing Kit:</strong> Test pH and nutrient levels for optimal 
+plant growth</li> 
+                <li><strong>Gardening Journal:</strong> Track planting dates, harvest times, 
+and observations</li> 
+                <li><strong>Planting Calendar:</strong> Local guide showing best planting 
+times for your area</li> 
+                <li><strong>Garden Planning Grid:</strong> Graph paper or app for layout 
+planning</li> 
+                <li><strong>Seed Starting Supplies:</strong> Trays, soil, lights for indoor seed 
+starting</li> 
+            </ul> 
+        </div> 
+         
+        <!-- Resource Box 2 --> 
+        <div style="background: #f0fdf4; padding: 2rem; border: 1px solid #86efac; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">     Recommended Tools for Beginners</h3> 
+            <p style="margin-bottom: 1rem;">Start with these basic tools and expand your 
+collection as your garden grows:</p> 
+            <ul style="padding-left: 1.5rem;"> 
+                <li><strong>Hand Trowel:</strong> For planting, transplanting, and digging 
+small holes</li> 
+                <li><strong>Garden Fork:</strong> For turning soil and breaking up clumps</li> 
+                <li><strong>Pruning Shears:</strong> Clean cuts for harvesting and 
+trimming</li> 
+                <li><strong>Watering Can with Rose:</strong> Gentle watering for 
+seedlings</li> 
+                <li><strong>Garden Gloves:</strong> Protect hands from dirt, thorns, and 
+blisters</li> 
+                <li><strong>Kneeling Pad:</strong> Comfort for extended gardening 
+sessions</li> 
+            </ul> 
+        </div> 
+         
+        <!-- Resource Box 3 --> 
+        <div style="background: #fefce8; padding: 2rem; border: 1px solid #fde047; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">       Digital Tools & Apps</h3> 
+            <p style="margin-bottom: 1rem;">Modern technology offers helpful tools for 
+gardeners of all levels:</p> 
+            <ul style="padding-left: 1.5rem;"> 
+                <li><strong>Plant Identification Apps:</strong> Identify plants and diagnose 
+problems</li> 
+                <li><strong>Garden Planning Software:</strong> Create digital layouts and 
+track plantings</li> 
+                <li><strong>Weather Tracking Apps:</strong> Monitor frost dates and 
+rainfall</li> 
+                <li><strong>Gardening Communities:</strong> Online forums for advice and 
+inspiration</li> 
+                <li><strong>Seed Saving Guides:</strong> Learn how to save seeds for next 
+season</li> 
+            </ul> 
+        </div> 
+         
+        <!-- Resource Box 4 --> 
+        <div style="background: #fef2f2; padding: 2rem; border: 1px solid #fca5a5; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">    Educational Resources</h3> 
+            <p style="margin-bottom: 1rem;">Expand your gardening knowledge with these 
+learning materials:</p> 
+            <ul style="padding-left: 1.5rem;"> 
+                <li><strong>Local Extension Services:</strong> Free resources specific to your 
+region</li> 
+                <li><strong>Gardening Books:</strong> Comprehensive guides for different skill 
+levels</li> 
+                <li><strong>Online Courses:</strong> Learn specific techniques from 
+experts</li> 
+                <li><strong>Seed Catalogs:</strong> Browse varieties and learn plant 
+requirements</li> 
+                <li><strong>Gardening Workshops:</strong> Hands-on learning at local 
+nurseries</li> 
+            </ul> 
+        </div> 
+         
+        <!-- Resource Box 5 --> 
+        <div style="background: #f0fdf4; padding: 2rem; border: 1px solid #bbf7d0; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">   Compost & Soil Building</h3> 
+            <p style="margin-bottom: 1rem;">Healthy soil is the foundation of successful 
+gardening. Essential resources include:</p> 
+            <ul style="padding-left: 1.5rem;"> 
+                <li><strong>Compost Bin or Pile:</strong> Transform kitchen scraps into rich 
+soil</li> 
+                <li><strong>Mulching Materials:</strong> Straw, leaves, or wood chips to retain 
+moisture</li> 
+                <li><strong>Organic Fertilizers:</strong> Natural options like fish emulsion or 
+bone meal</li> 
+                <li><strong>Cover Crop Seeds:</strong> Plants grown to improve soil between 
+seasons</li> 
+                <li><strong>Rain Barrel:</strong> Collect and conserve water for your 
+garden</li> 
+            </ul> 
+        </div> 
+         
+        <!-- Resource Checklist Box --> 
+        <div style="background: #f3e8ff; padding: 2rem; border: 1px solid #d8b4fe; border-radius: 1rem; margin-bottom: 2rem;"> 
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: 
+#065f46;">   My Resource Checklist</h3> 
+            <p style="margin-bottom: 1rem;">Click on items to track your progress!</p> 
+            <ul id="resourceChecklist" class="resource-checklist"></ul> 
+            <div id="checklistComment" class="checklist-comment comment
+progress"></div> 
+        </div> 
+         
+        <!-- Back link --> 
+        <div style="text-align: center; margin-top: 2rem;"> 
+            <a href="index.html" style="color: #059669; font-weight: bold; text-decoration: 
+none;">← Back to Home</a> 
+        </div> 
+    </section> 
+</main> 
+ 
+<footer> 
+    <div style="max-width: 80rem; margin: 0 auto;"> 
+        <div class="footer-grid"> 
+            <div> 
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 
+1rem;"> 
+                    <span style="font-size: 1.5rem;">  </span> 
+                    <span style="font-size: 1.25rem; font-weight: bold;">GreenThumb</span> 
+                </div> 
+                <p style="color: #a7f3d0;">Your farming and gardening companion.</p> 
+            </div> 
+ 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
+letter-spacing: 0.05em;">Quick Links</h4> 
+                <ul style="list-style: none;"> 
+                    <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: 
+#a7f3d0; text-decoration: none;">Home</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="crops.html" style="color: 
+#a7f3d0; text-decoration: none;">Crop Guide</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="planner.html" style="color: 
+#a7f3d0; text-decoration: none;">Garden Planner</a></li> 
+                    <li style="margin-bottom: 0.5rem;"><a href="seasons.html" style="color: 
+#a7f3d0; text-decoration: none;">Season Guide</a></li> 
+                </ul> 
+            </div> 
+ 
+            <div> 
+                <h4 style="font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; 
+letter-spacing: 0.05em;">Contact Us</h4> 
+                <ul style="list-style: none;"> 
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
+0.5rem;"> 
+                        <span>       </span> 
+                        <span>support@greenthumb.com</span> 
+                    </li> 
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 
+0.5rem;"> 
+                        <span>   </span> 
+                        <span>Farm Country, USA</span> 
+                    </li> 
+                </ul> 
+            </div> 
+        </div> 
+ 
+        <div style="border-top: 1px solid #047857; padding-top: 2rem; text-align: center; 
+color: #6ee7b7;"> 
+            <p>&copy; 2024 GreenThumb Platform. All rights reserved.</p> 
+            <p style="margin-top: 2rem;">Grow naturally, grow sustainably.</p> 
+        </div> 
+    </div> 
+</footer> 
+ 
+<!-- Simple JavaScript without localStorage --> 
+<script> 
+    const items = [ 
+        "   Soil Testing Kit", 
+        "       Gardening Journal",  
+        "      Hand Trowel", 
+        "     Pruning Shears", 
+        "    Garden Gloves", 
+        "  Watering Can", 
+        "    Compost Bin" 
+    ]; 
+     
+    let checked = new Array(items.length).fill(false); 
+     
+    function updateChecklist() { 
+        const container = document.getElementById('resourceChecklist'); 
+        const total = items.length; 
+        const checkedCount = checked.filter(c => c).length; 
+        const commentDiv = document.getElementById('checklistComment'); 
+         
+        container.innerHTML = items.map((item, i) => ` 
+            <li class="${checked[i] ? 'checked' : ''}" onclick="toggle(${i})"> 
+                <span>${checked[i] ? '[X]' : '[ ]'}</span> 
+                <span>${item}</span> 
+            </li> 
+        `).join(''); 
+         
+        if(checkedCount === 0) commentDiv.innerHTML = "         Click items to start tracking!"; 
+        else if(checkedCount === total) commentDiv.innerHTML = "              Amazing! You have everything you need!       "; 
+        else commentDiv.innerHTML = `   Great! You've got ${checkedCount} of ${total} 
+items. Keep going!`; 
+    } 
+     
+    function toggle(i) { 
+        checked[i] = !checked[i]; 
+        updateChecklist(); 
+    } 
+     
+    updateChecklist(); 
+</script> 
+ 
+</body> 
+</html>
